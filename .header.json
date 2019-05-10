@@ -1,0 +1,20 @@
+{
+    "target": "microbit",
+    "targetVersion": "1.4.5",
+    "name": "rjbit",
+    "meta": {},
+    "editor": "tsprj",
+    "pubId": "",
+    "pubCurrent": false,
+    "_rev": null,
+    "id": "2aac1c4d-f6af-4b17-2e51-413f31ef5aae",
+    "recentUse": 1557486791,
+    "modificationTime": 1557486791,
+    "blobId": null,
+    "blobVersion": null,
+    "blobCurrent": false,
+    "isDeleted": false,
+    "path": "pxt-rjbit",
+    "githubCurrent": false,
+    "saveId": null
+}

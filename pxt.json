@@ -1,0 +1,16 @@
+{
+    "name": "rjbit",
+    "version": "0.1.0",
+    "description": "RJ25 extensions for robotbit",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*",
+        "robotbit": "github:Kittenbot/pxt-robotbit#v0.2.9"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "public": true,
+    "preferredEditor": "tsprj"
+}
