@@ -127,7 +127,7 @@ namespace rjbit {
     }
 
     //% blockId=rjbit_touch block="Touch|port %port"
-    export function Touch(port: Ports, slot: Slots): boolean {
+    export function Touch(port: Ports): boolean {
         let pin = PortDigi[port][0]
         pins.setPull(pin, PinPullMode.PullUp)
         return pins.digitalReadPin(pin) == 0

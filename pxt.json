@@ -1,6 +1,6 @@
 {
     "name": "rjbit",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "RJ25 extensions for robotbit",
     "license": "MIT",
     "dependencies": {
@@ -9,7 +9,8 @@
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "_locales/zh/rjbit-strings.json"
     ],
     "public": true,
     "preferredEditor": "tsprj"
