@@ -1,7 +1,7 @@
 {
     "target": "microbit",
     "targetVersion": "1.4.5",
-    "name": "rjbit",
+    "name": "mbridge",
     "meta": {},
     "editor": "tsprj",
     "pubId": "",
@@ -14,7 +14,7 @@
     "blobVersion": null,
     "blobCurrent": false,
     "isDeleted": false,
-    "path": "pxt-rjbit",
+    "path": "pxt-mbridge",
     "githubCurrent": false,
     "saveId": null
 }

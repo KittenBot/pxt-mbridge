@@ -2,7 +2,7 @@
 Riven
 RJ25 Extension for robotbit
 load dependency
-"rjbit": "file:../pxt-rjbit"
+"mbridge": "file:../pxt-mbridge"
 */
 
 //% color="#00bbff" weight=10 icon="\uf1b9"
