@@ -58,7 +58,7 @@ namespace mbridge {
         return 999;
     }
 
-    //% blockId=mbridge_ultrasonic block="Ultrasonic|port %port"
+    //% blockId=mbridge_ultrasonic block="Ultrasonic|%port"
     //% group="Feature" 
     //% weight=91
     export function Ultrasonic(port: Ports): number {
@@ -88,7 +88,7 @@ namespace mbridge {
     export function PIR(port: Ports): boolean {
         let pin = PortDigi[port][0]
         pins.setPull(pin, PinPullMode.PullUp)
-        return pins.digitalReadPin(pin) == 0
+        return pins.digitalReadPin(pin) == 1
     }
 
     //% blockId=mbridge_onPIREvent block="on PIR|%port triggered"
@@ -115,7 +115,7 @@ namespace mbridge {
         pins.onPulsed(pin, PulseValue.Low, handler)
     }
 
-    //% blockId=mbridge_tracer block="Tracer|port %port|slot %slot"
+    //% blockId=mbridge_tracer block="Tracer|%port|slot %slot"
     //% group="DigitalSensor"
     export function Tracer(port: Ports, slot: Slots): boolean {
         let pin = PortDigi[port][slot]
@@ -131,7 +131,7 @@ namespace mbridge {
         pins.onPulsed(pin, PulseValue.High, handler)
     }
 
-    //% blockId=mbridge_dht11 block="DHT11|port %port|type %readtype"
+    //% blockId=mbridge_dht11 block="DHT11|%port|type %readtype"
     //% group="Feature" 
     export function DHT11(port: Ports, readtype: DHT11Type): number {
         let pin = PortDigi[port][0]
@@ -152,7 +152,7 @@ namespace mbridge {
         }
     }
 
-    //% blockId=mbridge_sound block="Sound|port %port"
+    //% blockId=mbridge_sound block="Sound|%port value"
     //% weight=90
     //% group="AnalogSensor"
     export function SoundSensor(port: PortsA): number {
@@ -160,13 +160,13 @@ namespace mbridge {
         return pins.analogReadPin(pin)
     }
     
-    //% blockId=mbridge_light block="Light|port %port"
+    //% blockId=mbridge_light block="Light|%port value"
     //% group="AnalogSensor"
     export function LightSensor(port: PortsA): number {
         let pin = PortAnalog[port]
         return pins.analogReadPin(pin)
     }
-    //% blockId=mbridge_Potentiometer block="Potentiometer|port %port"
+    //% blockId=mbridge_Potentiometer block="Potentiometer|%port value"
     //% group="AnalogSensor"
     export function Potentiometer(port: PortsA): number {
         let pin = PortAnalog[port]
