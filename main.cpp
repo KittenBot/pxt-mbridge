@@ -3,7 +3,7 @@
 
 using namespace std;
 
-namespace powerbrick {
+namespace mbridge {
 
     //%
     uint32_t dht11Update(uint8_t dht) {
