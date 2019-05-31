@@ -159,7 +159,7 @@ namespace mbridge {
         let pin = PortAnalog[port]
         return pins.analogReadPin(pin)
     }
-    
+
     //% blockId=mbridge_light block="Light|%port value"
     //% group="AnalogSensor"
     export function LightSensor(port: PortsA): number {
