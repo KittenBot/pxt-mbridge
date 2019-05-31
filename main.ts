@@ -6,7 +6,7 @@ load dependency
 */
 
 //% color="#00bbff" weight=10 icon="\uf1b9"
-namespace rjbit {
+namespace mBridge {
     export enum Ports {
         PORT1 = 0,
         PORT2 = 1,
@@ -134,15 +134,11 @@ namespace rjbit {
     }
 
     //% blockId=rjbit_onTouchEvent block="on Touch|%port touched"
-    export function onTouchEvent(port: Ports, slot: Slots, handler: () => void): void {
+    export function onTouchEvent(port: Ports, handler: () => void): void {
         let pin = PortDigi[port][0]
-
         pins.setPull(pin, PinPullMode.PullUp)
         pins.onPulsed(pin, PulseValue.Low, handler)
     }
-
-
-
 
 
 }
