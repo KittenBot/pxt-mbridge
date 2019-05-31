@@ -2,11 +2,12 @@
 Riven
 RJ25 Extension for robotbit
 load dependency
-"mbridge": "file:../pxt-mbridge"
+"mbirdge": "file:../pxt-mbridge"
 */
 
 //% color="#00bbff" weight=10 icon="\uf1b9"
-namespace mBridge {
+//% groups='["AnalogSensor", "DigitalSensor", "Feature"]'
+namespace mbridge {
     export enum Ports {
         PORT1 = 0,
         PORT2 = 1,
@@ -15,6 +16,8 @@ namespace mBridge {
     }
 
     export enum PortsA {
+        PORT1 = 0,
+        PORT2 = 1,
         PORT3 = 2
     }
 
@@ -55,7 +58,8 @@ namespace mBridge {
         return 999;
     }
 
-    //% blockId=rjbit_ultrasonic block="Ultrasonic|port %port"
+    //% blockId=mbridge_ultrasonic block="Ultrasonic|port %port"
+    //% group="Feature" 
     //% weight=91
     export function Ultrasonic(port: Ports): number {
         // send pulse
@@ -78,28 +82,57 @@ namespace mBridge {
         return Math.floor(ret * 10 / 6 / 58);
     }
 
-    //% blockId=rjbit_tracer block="Tracer|port %port|slot %slot"
+    //% blockId=mbridge_PIR block="PIR | port %port checked"
     //% weight=81
+    //% group="DigitalSensor"
+    export function PIR(port: Ports): boolean {
+        let pin = PortDigi[port][0]
+        pins.setPull(pin, PinPullMode.PullUp)
+        return pins.digitalReadPin(pin) == 0
+    }
+
+    //% blockId=mbridge_onPIREvent block="on PIR|%port triggered"
+    //% group="DigitalSensor"
+    export function onPIREvent(port: Ports, handler: () => void): void {
+        let pin = PortDigi[port][0]
+        pins.setPull(pin, PinPullMode.PullUp)
+        pins.onPulsed(pin, PulseValue.High, handler)
+    }
+
+    //% blockId=mbridge_touch block="Touch|port %port"
+    //% group="DigitalSensor"
+    export function Touch(port: Ports): boolean {
+        let pin = PortDigi[port][0]
+        pins.setPull(pin, PinPullMode.PullUp)
+        return pins.digitalReadPin(pin) == 0
+    }
+
+    //% blockId=mbridge_onTouchEvent block="on Touch|%port touched"
+    //% group="DigitalSensor"
+    export function onTouchEvent(port: Ports, handler: () => void): void {
+        let pin = PortDigi[port][0]
+        pins.setPull(pin, PinPullMode.PullUp)
+        pins.onPulsed(pin, PulseValue.Low, handler)
+    }
+
+    //% blockId=mbridge_tracer block="Tracer|port %port|slot %slot"
+    //% group="DigitalSensor"
     export function Tracer(port: Ports, slot: Slots): boolean {
         let pin = PortDigi[port][slot]
         pins.setPull(pin, PinPullMode.PullUp)
         return pins.digitalReadPin(pin) == 1
     }
 
-    //% blockId=rjbit_onTracerEvent block="on Tracer|%port|slot %slot touch black"
+    //% blockId=mbridge_onTracerEvent block="on Tracer|%port|slot %slot touch black"
+    //% group="DigitalSensor"
     export function onTracerEvent(port: Ports, slot: Slots, handler: () => void): void {
         let pin = PortDigi[port][slot]
         pins.setPull(pin, PinPullMode.PullUp)
         pins.onPulsed(pin, PulseValue.High, handler)
     }
 
-    //% blockId=rjbit_sound block="Sound|port %port"
-    export function SoundSensor(port: PortsA): number {
-        let pin = PortAnalog[port]
-        return pins.analogReadPin(pin)
-    }
-
-    //% blockId=rjbit_dht11 block="DHT11|port %port|type %readtype"
+    //% blockId=mbridge_dht11 block="DHT11|port %port|type %readtype"
+    //% group="Feature" 
     export function DHT11(port: Ports, readtype: DHT11Type): number {
         let pin = PortDigi[port][0]
 
@@ -119,29 +152,32 @@ namespace mBridge {
         }
     }
 
-    //% blockId=rjbit_onPIREvent block="on PIR|%port triggered"
-    export function onPIREvent(port: Ports, handler: () => void): void {
-        let pin = PortDigi[port][0]
-        pins.setPull(pin, PinPullMode.PullUp)
-        pins.onPulsed(pin, PulseValue.High, handler)
+    //% blockId=mbridge_sound block="Sound|port %port"
+    //% weight=90
+    //% group="AnalogSensor"
+    export function SoundSensor(port: PortsA): number {
+        let pin = PortAnalog[port]
+        return pins.analogReadPin(pin)
+    }
+    
+    //% blockId=mbridge_light block="Light|port %port"
+    //% group="AnalogSensor"
+    export function LightSensor(port: PortsA): number {
+        let pin = PortAnalog[port]
+        return pins.analogReadPin(pin)
+    }
+    //% blockId=mbridge_Potentiometer block="Potentiometer|port %port"
+    //% group="AnalogSensor"
+    export function Potentiometer(port: PortsA): number {
+        let pin = PortAnalog[port]
+        return pins.analogReadPin(pin)
     }
 
-    //% blockId=rjbit_touch block="Touch|port %port"
-    export function Touch(port: Ports): boolean {
-        let pin = PortDigi[port][0]
-        pins.setPull(pin, PinPullMode.PullUp)
-        return pins.digitalReadPin(pin) == 0
-    }
-
-    //% blockId=rjbit_onTouchEvent block="on Touch|%port touched"
-    export function onTouchEvent(port: Ports, handler: () => void): void {
-        let pin = PortDigi[port][0]
-        pins.setPull(pin, PinPullMode.PullUp)
-        pins.onPulsed(pin, PulseValue.Low, handler)
-    }
 
 
 }
+
+
 
 
 

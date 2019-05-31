@@ -14,5 +14,5 @@ MIT
 (The metadata above is needed for package search.)
 
 ```package
-powerbrick=github:Kittenbot/pxt-rjbit
+powerbrick=github:Kittenbot/pxt-mbridge
 ```

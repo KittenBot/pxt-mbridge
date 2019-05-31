@@ -1,0 +1,13 @@
+{
+    "mbridge.Ultrasonic|block": "超声波|port %port",
+    "mbridge.DHT11|block": "DHT11|port %port|类型 %readtype",
+    "mbridge.LightSensor|block": "亮度传感器|port %port",
+    "mbridge.SoundSensor|block": "声音传感器|port %port",
+    "mbridge.Potentiometer|block": "电位器|port %port",
+    "mbridge.Tracer|block": "巡线|Port %port|传感器 %slot",
+    "mbridge.onTracerEvent|block": "当巡线|%port|传感器 %slot 碰到黑线",
+    "mbridge.onPIREvent|block": "当PIR|%port 感应到热源",
+    "mbridge.PIR|block": "PIR|%port 感应热源",
+    "mbridge.Touch|block": "触摸|%port",
+    "mbridge.onTouchEvent|block": "当触摸|%port 按下"
+}
