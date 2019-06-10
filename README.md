@@ -1,4 +1,4 @@
-# RJ-BIT
+# mBridge //RJ-BIT
 
 Extension for RJ25 based module extensions
 ![](icon.png)
