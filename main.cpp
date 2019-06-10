@@ -47,4 +47,4 @@ namespace mbridge {
     
     
     
-} // namespace powerbrick
+} // namespace mbridge
