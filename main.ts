@@ -53,7 +53,7 @@ namespace mBridge {
     let dht11Temp = -1;
     let dht11Humi = -1;
 
-    //% shim=mbridge::dht11Update
+    //% shim=powerbrick::dht11Update
     function dht11Update(pin: number): number {
         return 999;
     }
