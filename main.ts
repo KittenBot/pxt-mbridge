@@ -7,7 +7,7 @@ load dependency
 
 //% color="#00bbff" weight=10 icon="\uf1b9"
 //% groups='["AnalogSensor", "DigitalSensor", "Feature"]'
-namespace mbridge {
+namespace mBridge {
     export enum Ports {
         PORT1 = 0,
         PORT2 = 1,
@@ -46,14 +46,14 @@ namespace mbridge {
         //% block=temperature(°F)
         TemperatureF = 1,
         //% block=humidity
-        Humidity = 2
+        Humidity = 2    
     }
 
     let distanceBuf = 0;
     let dht11Temp = -1;
     let dht11Humi = -1;
 
-    //% shim=powerbrick::dht11Update
+    //% shim=mbridge::dht11Update
     function dht11Update(pin: number): number {
         return 999;
     }
@@ -166,13 +166,13 @@ namespace mbridge {
         let pin = PortAnalog[port]
         return pins.analogReadPin(pin)
     }
+
     //% blockId=mbridge_Potentiometer block="Potentiometer|%port value"
     //% group="AnalogSensor"
     export function Potentiometer(port: PortsA): number {
         let pin = PortAnalog[port]
         return pins.analogReadPin(pin)
     }
-
 
 
 }
