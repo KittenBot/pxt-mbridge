@@ -1,17 +1,18 @@
 {
     "name": "mbridge",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "description": "RJ25 extensions for robotbit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "robotbit": "github:Kittenbot/pxt-robotbit#v0.3.0"
+        "robotbit": "github:Kittenbot/pxt-robotbit#v0.3.5"
     },
     "files": [
         "README.md",
         "main.ts",
         "main.cpp",
-        "_locales/zh/mbridge-strings.json"
+        "_locales/zh-cn/mbridge-strings.json",
+        "_locales/zh-tw/mbridge-strings.json"
     ],
     "public": true,
     "preferredEditor": "tsprj"

@@ -1,0 +1,14 @@
+{
+    "mBridge.Ultrasonic|block": "超音波|%port",
+    "mBridge.DHT11|block": "DHT11|%port|類型 %readtype",
+    "mBridge.LightSensor|block": "亮度感應器|%port",
+    "mBridge.SoundSensor|block": "聲音感應器|%port",
+    "mBridge.Potentiometer|block": "可變電阻器|%port",
+    "mBridge.Tracer|block": "巡線|%port|感應器 %slot",
+    "mBridge.onTracerEvent|block": "當巡線|%port|感應器 %slot 碰到黑線",
+    "mBridge.onPIREvent|block": "當PIR|%port 感應到熱源",
+    "mBridge.PIR|block": "PIR|%port 感應熱源",
+    "mBridge.Touch|block": "觸摸|%port",
+    "mBridge.onTouchEvent|block": "當觸摸|%port 按下"
+}
+
