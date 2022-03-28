@@ -1,11 +1,11 @@
 {
     "name": "mbridge",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "RJ25 extensions for robotbit",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "robotbit": "github:Kittenbot/pxt-robotbit#v0.3.5"
+        "robotbit": "github:Kittenbot/pxt-robotbit#v0.3.8"
     },
     "files": [
         "README.md",
